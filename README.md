@@ -1,16 +1,40 @@
 # Fiche Readme
 
 ## Contexte du projet
+Ce projet de data science s'appuie sur le dataset **Bank Marketing UCI**, issu d'une banque portugaise, qui contient des données collectées lors de **campagnes de marketing téléphonique** visant à inciter les clients à souscrire à un **dépôt à terme**.
 
+Chaque enregistrement représente une interaction client avec des informations telles que :
+- Des **données démographiques** (âge, emploi, niveau d'études, état civil, etc.),
+- Des **informations comportementales** (nombre de contacts, durée des appels, résultats de campagnes précédentes...),
+- Et une **variable cible** indiquant si le client a souscrit ou non au dépôt proposé.
+
+Ce projet vise à :
+- **Analyser** les données pour mieux comprendre les caractéristiques influençant la souscription,
+- **Prétraiter** les données pour les rendre exploitables,
+- **Développer un modèle de classification supervisée** capable de prédire l’issue d’une campagne auprès d’un client,
+- **Automatiser** ce processus via **PyCaret**, une librairie AutoML open-source qui permet d'entraîner, comparer et sélectionner des modèles de machine learning de manière rapide et efficace.
+
+L'approche pédagogique comprend :
+- Une **veille préalable** sur les concepts de machine learning supervisé (classification, arbre de décision, target, accuracy...),
+- Un **nettoyage et une exploration des données** via Pandas,
+- L'utilisation de **PyCaret** pour configurer, entraîner et évaluer automatiquement plusieurs modèles de classification,
+- L'interprétation des résultats pour choisir le meilleur modèle selon la **métrique d’accuracy**.
+
+Ce projet permet de se familiariser avec l’ensemble du pipeline de machine learning, depuis la compréhension métier jusqu’à la modélisation automatisée, tout en développant des compétences concrètes en **data science**, **analyse exploratoire**, **apprentissage automatique** et **AutoML**.
+
+---
 
 ## Les données et leur analyse
 
+---
 
 ## Les algorithmes utilisés
 
+---
 
 ## Conclusion du travail
 
+---
 
 ## Veille réalisée
 1) Qu’est-ce que l’apprentissage automatique supervisé ?
