@@ -1,6 +1,6 @@
-# 🏦 Projet : Prédiction de souscription à une offre bancaire
+# Projet : Prédiction de souscription à une offre bancaire
 
-## 🎯 Objectif
+## Objectif
 
 L'objectif de ce projet est de construire un modèle de classification supervisée capable de prédire si un client souscrira à une offre de **dépôt à terme** suite à une campagne de marketing téléphonique.
 
@@ -8,7 +8,7 @@ Nous utilisons pour cela le jeu de données **Bank Marketing UCI**, ainsi que la
 
 ---
 
-## 📂 Contenu du projet
+## Contenu du projet
 
 Le repository contient :
 - `exploration.ipynb` : analyse exploratoire des données
@@ -17,7 +17,7 @@ Le repository contient :
 
 ---
 
-## 🧠 Partie 1 – Veille théorique
+## Partie 1 – Veille théorique
 
 ### 🔍 Notions clés de l'apprentissage automatique supervisé
 
@@ -36,9 +36,9 @@ Le repository contient :
 
 ---
 
-## 📊 Partie 2 – Analyse des données
+## Partie 2 – Analyse des données
 
-### 📁 Dataset
+### Dataset
 
 Le jeu de données contient des informations sur des clients contactés dans le cadre de campagnes marketing d'une banque portugaise.
 
@@ -52,13 +52,13 @@ Chaque ligne représente un client, avec les colonnes suivantes (extrait) :
 - `poutcome` : résultat d’une campagne précédente
 - **`y`** : **variable cible** indiquant si le client a souscrit à l’offre
 
-### 🧹 Prétraitement effectué
+### Prétraitement effectué
 
 - Suppression des valeurs `unknown` remplacées par `NaN`
 - Suppression des lignes incomplètes (`dropna`)
 - Transformation automatique des variables catégorielles via PyCaret
 
-### 📈 Analyse exploratoire (voir `exploration.ipynb`)
+### Analyse exploratoire (voir `exploration.ipynb`)
 
 - Répartition de la variable cible : déséquilibrée (`no` majoritaire)
 - Profils d’âge des clients : 30–60 ans
@@ -66,20 +66,20 @@ Chaque ligne représente un client, avec les colonnes suivantes (extrait) :
 
 ---
 
-## 🤖 Partie 3 – Modélisation avec PyCaret
+## Partie 3 – Modélisation avec PyCaret
 
-### ⚙️ Outil utilisé
+### Outil utilisé
 
 [PyCaret](https://pycaret.gitbook.io/docs/) est une librairie Python AutoML low-code permettant de tester rapidement plusieurs modèles de machine learning.
 
-### 🔁 Étapes suivies
+### Étapes suivies
 
 1. Initialisation de PyCaret avec `setup()`
 2. Comparaison automatique des modèles avec `compare_models()`
 3. Sélection du meilleur modèle selon la **métrique d’accuracy**
 4. Finalisation et test du modèle
 
-### 📊 Résultats
+### Résultats
 
 Le meilleur modèle sélectionné par PyCaret (ex. : `RandomForestClassifier`, `GradientBoostingClassifier`, ou autre selon l'exécution) a permis d’atteindre une **accuracy supérieure à 85 %**.
 
@@ -87,7 +87,7 @@ Ce modèle est capable de prédire correctement dans la majorité des cas si un 
 
 ---
 
-## ✅ Conclusion
+## Conclusion
 
 Ce projet a permis de :
 - Comprendre les étapes clés de l’apprentissage automatique supervisé
@@ -99,7 +99,7 @@ Grâce à cette approche, la banque pourrait **mieux cibler ses campagnes** mark
 
 ---
 
-## 🔗 Ressources utilisées
+## Ressources utilisées
 
 - 📘 PyCaret Docs : [https://pycaret.gitbook.io/docs](https://pycaret.gitbook.io/docs)
 - 📹 StatQuest YouTube : [A Gentle Introduction to ML](https://www.youtube.com/watch?v=Gv9_4yMHFhI)
