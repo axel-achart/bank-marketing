@@ -3122,3 +3122,11 @@ Please also refer to the documentation for alternative solver options:
 2025-07-06 14:02:45,318:WARNING:/Users/Kylliann/Desktop/Projet la plateforme/bank-marketing/.venv/lib/python3.9/site-packages/sklearn/metrics/_classification.py:1561: UserWarning: Note that pos_label (set to 'yes') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
   warnings.warn(
 
+2025-07-08 10:46:31,258:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-08 10:46:31,259:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-08 10:46:31,261:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-08 10:46:31,261:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
