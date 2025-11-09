@@ -1,107 +1,104 @@
-# Projet : Prédiction de souscription à une offre bancaire
+# 📊 Subscription Prediction for Banking Offers
 
-## Objectif
+## 🎯 Objective
 
-L'objectif de ce projet est de construire un modèle de classification supervisée capable de prédire si un client souscrira à une offre de **dépôt à terme** suite à une campagne de marketing téléphonique.
-
-Nous utilisons pour cela le jeu de données **Bank Marketing UCI**, ainsi que la librairie **PyCaret** qui permet une modélisation rapide grâce à l’AutoML.
-
----
-
-## Contenu du projet
-
-Le repository contient :
-- `exploration.ipynb` : analyse exploratoire des données
-- `modelisation.ipynb` : entraînement et évaluation de modèles avec PyCaret
-- `README.md` : ce fichier
+This project builds a supervised classification model to predict whether a customer will subscribe to a **term deposit** after a bank's telemarketing campaign.  
+We utilize the **Bank Marketing UCI dataset** and the **PyCaret** library, enabling rapid AutoML modeling and streamlined comparison of algorithms[web:25][web:28][web:30].
 
 ---
 
-## Partie 1 – Veille théorique
+## 📦 Project Contents
 
-### 🔍 Notions clés de l'apprentissage automatique supervisé
-
-- **Apprentissage supervisé** : Apprentissage à partir de données étiquetées pour prédire une cible.
-- **Données labellisées** : Données avec une réponse connue (ex. : "yes" ou "no").
-- **Classification supervisée** : Prédiction d’une catégorie (ex. : dépôt souscrit ou non).
-- **Modèle d’apprentissage automatique** : Programme qui apprend à partir de données pour faire des prédictions.
-- **Données d’entraînement** : Données utilisées pour entraîner le modèle.
-- **Target** : Variable cible à prédire (`y` dans ce projet).
-- **Phase d’entraînement** : Le modèle apprend à reconnaître les patterns dans les données.
-- **Phase de prédiction** : Le modèle applique ce qu’il a appris à de nouvelles données.
-- **Prétraitement** : Nettoyage et préparation des données avant modélisation (suppression des valeurs manquantes, encodage, etc.).
-- **Accuracy** : Pourcentage de bonnes prédictions. Exemple : 85% de précision = 85 prédictions correctes sur 100.
-- **AutoML** : Automatisation du machine learning (test automatique de plusieurs modèles).
-- **Arbre de décision** : Modèle qui prend des décisions via des règles ("si... alors...").
+- `exploration.ipynb` — Exploratory analysis
+- `modelisation.ipynb` — Model training and evaluation using PyCaret
+- `README.md` — This documentation
 
 ---
 
-## Partie 2 – Analyse des données
+## 📚 Part 1 – Machine Learning Concepts
 
-### Dataset
+### Key Terms in Supervised Learning
 
-Le jeu de données contient des informations sur des clients contactés dans le cadre de campagnes marketing d'une banque portugaise.
-
-Chaque ligne représente un client, avec les colonnes suivantes (extrait) :
-- `age` : âge du client
-- `job` : type d’emploi
-- `marital` : état civil
-- `education` : niveau d’étude
-- `balance` : solde du compte
-- `contact`, `month`, `duration`... : infos sur la campagne
-- `poutcome` : résultat d’une campagne précédente
-- **`y`** : **variable cible** indiquant si le client a souscrit à l’offre
-
-### Prétraitement effectué
-
-- Suppression des valeurs `unknown` remplacées par `NaN`
-- Suppression des lignes incomplètes (`dropna`)
-- Transformation automatique des variables catégorielles via PyCaret
-
-### Analyse exploratoire (voir `exploration.ipynb`)
-
-- Répartition de la variable cible : déséquilibrée (`no` majoritaire)
-- Profils d’âge des clients : 30–60 ans
-- Taux de souscription plus élevé chez les étudiants, retraités, cadres
+- **Supervised learning** — Learning from labeled data (known target values)
+- **Labeled data** — Data with known answers (e.g., “yes” or “no” for subscription)
+- **Supervised classification** — Predicting discrete categories (subscribed or not)
+- **Model** — Algorithm trained to detect data patterns and predict outcomes
+- **Training data** — Dataset used to fit models
+- **Target** — The outcome to be predicted (`y`)
+- **Training phase** — Model learns pattern from labeled data
+- **Prediction phase** — Model forecasts outcomes for new samples
+- **Preprocessing** — Cleaning, imputing missing data, encoding categorical variables
+- **Accuracy** — Percentage of correctly predicted labels
+- **AutoML** — Automated model selection, tuning, and benchmarking
+- **Decision tree** — Common classification algorithm using “if...then...” rules
 
 ---
 
-## Partie 3 – Modélisation avec PyCaret
+## 📊 Part 2 – Data Analysis
 
-### Outil utilisé
+### Dataset Overview
 
-[PyCaret](https://pycaret.gitbook.io/docs/) est une librairie Python AutoML low-code permettant de tester rapidement plusieurs modèles de machine learning.
+The dataset describes contacts with clients during telemarketing campaigns by a Portuguese bank[web:25][web:28][web:31]:
 
-### Étapes suivies
+| Column      | Description                                  |
+|:------------|:---------------------------------------------|
+| age         | Client’s age                                 |
+| job         | Occupation                                   |
+| marital     | Marital status                               |
+| education   | Education level                              |
+| balance     | Account balance                              |
+| contact, month, duration | Campaign details                |
+| poutcome    | Outcome of previous campaign                 |
+| y           | Target: subscription to term deposit (yes/no)|
 
-1. Initialisation de PyCaret avec `setup()`
-2. Comparaison automatique des modèles avec `compare_models()`
-3. Sélection du meilleur modèle selon la **métrique d’accuracy**
-4. Finalisation et test du modèle
+### Preprocessing Steps
 
-### Résultats
+- Replaced `unknown` values with `NaN`
+- Dropped rows with missing values
+- Automatically encoded categorical variables with PyCaret
 
-Le meilleur modèle sélectionné par PyCaret (ex. : `RandomForestClassifier`, `GradientBoostingClassifier`, ou autre selon l'exécution) a permis d’atteindre une **accuracy supérieure à 85 %**.
+### Exploratory Findings (see `exploration.ipynb`)
 
-Ce modèle est capable de prédire correctement dans la majorité des cas si un client est susceptible de souscrire.
-
----
-
-## Conclusion
-
-Ce projet a permis de :
-- Comprendre les étapes clés de l’apprentissage automatique supervisé
-- Nettoyer et analyser un jeu de données réel
-- Utiliser PyCaret pour entraîner et comparer des modèles rapidement
-- Construire un outil de prédiction basé sur des données client
-
-Grâce à cette approche, la banque pourrait **mieux cibler ses campagnes** marketing et augmenter son taux de conversion client.
+- Target distribution is imbalanced (majority are “no”)
+- Typical subscriber profile: 30–60 years old
+- Higher subscription rates among students, retirees, and executives
 
 ---
 
-## Ressources utilisées
+## ⚙️ Part 3 – Modeling with PyCaret
 
-- 📘 PyCaret Docs : [https://pycaret.gitbook.io/docs](https://pycaret.gitbook.io/docs)
-- 📹 StatQuest YouTube : [A Gentle Introduction to ML](https://www.youtube.com/watch?v=Gv9_4yMHFhI)
-- 📝 Classification Blog – DataCamp : [Introduction à la classification](https://www.datacamp.com/blog/classification-machine-learning)
+### Tool
 
+[PyCaret](https://pycaret.gitbook.io/docs/) is a Python AutoML library ideal for rapid model testing and selection.
+
+### Workflow
+
+1. Initialize PyCaret with `setup()`
+2. Use `compare_models()` for automated benchmarking
+3. Select top-performing model by accuracy
+4. Finalize and test predictions
+
+### Results
+
+The best performing model (e.g. `RandomForestClassifier` or `GradientBoostingClassifier`) achieved **over 85% accuracy**.  
+It reliably predicts client subscription for most cases.
+
+---
+
+## 🧠 Conclusion
+
+This project demonstrates:
+- Core supervised learning workflow
+- Real-world dataset cleansing and exploration
+- PyCaret-accelerated modeling and comparison
+- Deployment of an effective subscription prediction tool
+
+With these insights, banks can **target marketing campaigns** more efficiently and increase conversion rates.
+
+---
+
+## 📚 Resources
+
+- [PyCaret Documentation](https://pycaret.gitbook.io/docs)
+- [StatQuest: ML Introduction](https://www.youtube.com/watch?v=Gv9_4yMHFhI)
+- [DataCamp Blog: Classification Intro](https://www.datacamp.com/blog/classification-machine-learning)
